@@ -48,7 +48,7 @@ public class lyricFileCreator extends Applet{
                    
             songHTML = updateLyrics(songHTML, eMapping);
              
-            writeToFile("../lyrics/song1.html", songHTML);
+            writeToFile("../song.html", songHTML);
 
     }
     
