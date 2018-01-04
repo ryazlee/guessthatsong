@@ -40,14 +40,9 @@ public class lyricFileCreator extends Applet{
 
             data = data.substring(data.indexOf("<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->")+133, data.indexOf("<!-- MxM banner -->") - 14);
             
-            String songHTML = searchAndReplace("#FILLIN#", data, baseHTML);
-        
-            System.out.println(songHTML.contains("["));
-             
+            String songHTML = updateLyrics(data, eMapping);
             songHTML = removeBracketText(songHTML);
-                   
-            songHTML = updateLyrics(songHTML, eMapping);
-             
+            songHTML = searchAndReplace("#FILLIN#", songHTML, baseHTML);
             writeToFile("../song.html", songHTML);
             
     }
@@ -91,7 +86,7 @@ public class lyricFileCreator extends Applet{
         for (String line: lines){
             String searchparam = line.substring(0, line.indexOf(":"));
             String replaceparam = line.substring(line.indexOf(":")+1, line.indexOf(";"));
-            System.out.println("searching for: " + searchparam + " replacing with: " + replaceparam);
+            //System.out.println("searching for: " + searchparam + " replacing with: " + replaceparam);
  
             ret = searchAndReplace(searchparam, replaceparam, ret);
         }
@@ -109,7 +104,7 @@ public class lyricFileCreator extends Applet{
                 for (int j = i; j < text.length()-1; j++){
                     if(text.charAt(j) == ']') endbracket = j + 1;
                 }
-                System.out.println(startbracket + "     " + endbracket); 
+                //System.out.println(startbracket + "     " + endbracket); 
                 String searchparam = text.substring(startbracket-1, endbracket+1);
             
                 text = searchAndReplace(searchparam, "", text);
