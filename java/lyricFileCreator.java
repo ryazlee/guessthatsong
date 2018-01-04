@@ -49,7 +49,7 @@ public class lyricFileCreator extends Applet{
             songHTML = updateLyrics(songHTML, eMapping);
              
             writeToFile("../song.html", songHTML);
-
+            
     }
     
     public void paint(Graphics g) {
