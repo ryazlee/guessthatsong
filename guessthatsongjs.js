@@ -10,44 +10,8 @@ var eMapping = "story:<i class=\"em em-book\"></i>;::phone:<i class=\"em em-tele
 
 document.write(url);
 
-<!--
-$.ajax({ 
-    url: "http://www.theuselessweb.com",
-    success: function(data) { alert(data); } 
-});
--->
+const cheerio = require("cheerio");
 
-var songHTML = ""; 
-
-var xhr = createCORSRequest('GET', url);
-if (!xhr) {
-  throw new Error('CORS not supported');
-}
-xhr.send();
-
-function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-
-    // Check if the XMLHttpRequest object has a "withCredentials" property.
-    // "withCredentials" only exists on XMLHTTPRequest2 objects.
-    xhr.open(method, url, true);
-
-  } else if (typeof XDomainRequest != "undefined") {
-
-    // Otherwise, check if XDomainRequest.
-    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-
-  } else {
-
-    // Otherwise, CORS is not supported by the browser.
-    xhr = null;
-
-  }
-  return xhr;
-}
 
 function updateLyrics(html, mapping){
     var ret = html;
@@ -60,18 +24,3 @@ function updateLyrics(html, mapping){
     return ret;
 }
 
-
-
-<!--
-function makeHttpObject() {
-    try {return new XMLHttpRequest();}
-    catch (error) {}
-    try {return new ActiveXObject("Msxml2.XMLHTTP");}
-    catch (error) {}
-    try {return new ActiveXObject("Microsoft.XMLHTTP");}
-    catch (error) {}
-
-    throw new Error("Could not create HTTP request object.");
-}
-
--->
