@@ -1,6 +1,16 @@
+man:<i class="em em-man"></i>;::
+boy:<i class="em em-man"></i>;::
+fix:<i class="em em-hammer_and_wrench"></i>;::
+kiss:<i class="em em-kiss"></i>;::
 light:<i class="em em-bulb"></i>;::
-thought:<i class="em em-thinking_face"></i>;::
+ance:<i class="em em-ant"></i>;::
+stake:<i class="em em-cut_of_meat"></i>;::
+steak:<i class="em em-cut_of_meat"></i>;::
+eight:<i class="em em-eight"></i>;::
+ate:<i class="em em-eight"></i>;::
+music:<i class="em em-musical_note"></i>;::
 think:<i class="em em-thinking_face"></i>;::
+thought:<i class="em em-thinking_face"></i>;::
 story:<i class="em em-book"></i>;::
 phone:<i class="em em-telephone_receiver"></i>;::
 bad:<i class="em em--1"></i>;::
