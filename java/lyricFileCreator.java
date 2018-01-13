@@ -41,6 +41,7 @@ public class lyricFileCreator extends Applet{
             data = data.substring(data.indexOf("<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->")+133, data.indexOf("<!-- MxM banner -->") - 14);
             
             String songHTML = updateLyrics(data, eMapping);
+            songHTML = songHTML.toLowerCase();
             songHTML = searchAndReplace("#FILLIN#", songHTML, baseHTML);
             writeToFile("../song.html", songHTML);
             
