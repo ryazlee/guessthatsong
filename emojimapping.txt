@@ -1,6 +1,5 @@
 i':<i class="em em-eye"></i>';::
 i :<i class="em em-eye"></i> ;::
-i.:<i class="em em-eye"></i>.;::
 ain't:<i class="em em-art"></i>;::
 old:<i class="em em-older_adult"></i>;::
 sleep:<i class="em em-sleeping"></i>;::
