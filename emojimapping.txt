@@ -1,6 +1,6 @@
 old:<i class="em em-older_adult"></i>;::
 sleep:<i class="em em-sleeping"></i>;::
-dream<i class="em em-sleeping"></i>;::
+dream:<i class="em em-sleeping"></i>;::
 man:<i class="em em-man"></i>;::
 boy:<i class="em em-man"></i>;::
 fix:<i class="em em-hammer_and_wrench"></i>;::
