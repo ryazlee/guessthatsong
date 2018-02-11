@@ -1,4 +1,3 @@
-art:<i class="em em-art"></i>;::
 I':<i class="em em-eye"></i>';::
 one:<i class="em em-one"></i>;::
 1:<i class="em em-one"></i>;::
@@ -88,6 +87,7 @@ watch:<i class="em em-watch"></i>;::
 up:<i class="em em-arrow_up"></i>;::
 call:<i class="em em-telephone_receiver"></i>;::
 home:<i class="em em-house"></i>;::
+ art: <i class="em em-art"></i>;::
 heart:<i class="em em-heart"></i>;::
 love:<i class="em em-heart"></i>;::
 Home:<i class="em em-house"></i>;::
