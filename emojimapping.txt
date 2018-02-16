@@ -43,7 +43,6 @@ light:<i class="em em-bulb"></i>;::
 ance:<i class="em em-ant"></i>;::
 stake:<i class="em em-cut_of_meat"></i>;::
 steak:<i class="em em-cut_of_meat"></i>;::
-eight:<i class="em em-eight"></i>;::
 ate:<i class="em em-eight"></i>;::
 music:<i class="em em-musical_note"></i>;::
 think:<i class="em em-thinking_face"></i>;::
