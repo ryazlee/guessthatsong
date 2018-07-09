@@ -43,7 +43,7 @@ public class lyricFileCreator {
             String songHTML = updateLyrics(data, eMapping);
             songHTML = songHTML.toLowerCase();
             songHTML = searchAndReplace("#FILLIN#", songHTML, baseHTML);
-            writeToFile("../song.html", songHTML);
+            writeToFile("../index.html", songHTML);
             
     }
     
