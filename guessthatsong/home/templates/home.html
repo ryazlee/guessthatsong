@@ -1,0 +1,19 @@
+{% block content %}
+    <html>
+    <head>
+        <title>#guessthatsongday!</title>
+        <meta charset='utf-8'>
+        <script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython.js"></script>
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    </head>
+    <body> 
+        <div>Enter an artist!<input id="artist_input"></div>
+        <div>Enter a song!<input id="song_input"></div>
+        <button id = "display_song_summary_button">Display</button>
+        <div id = "song_html">
+            {{ song_html }}
+        </div>
+
+    </body>
+</html>
+{% endblock %}
