@@ -18,5 +18,7 @@ class HomeView(TemplateView):
         """
         Define post function of web page
         """
+        song = request.POST["song"]
+        artist = request.POST["artist"]
         return dj_short.redirect("/home/")
 

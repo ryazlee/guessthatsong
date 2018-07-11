@@ -17,3 +17,27 @@
     </body>
 </html>
 {% endblock %}
+
+{% block imported_js %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+{% endblock %}
+    
+{% block js %}
+
+    $.ajax({
+        type: "POST",
+        url: "/home/",
+        data: {
+            "artist": $("#artist_input"),
+            "song": $("#song_input"),
+            "csrfmiddlewaretoken": "{{ csrf_token }}",
+        },
+        success: function(data){
+            console.log("SUCCESS!!!");
+        },
+        failure: function(data){
+            console.log("FAILURE!!!");
+        },
+    });
+
+{% endblock %}
