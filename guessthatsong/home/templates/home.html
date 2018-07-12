@@ -9,7 +9,7 @@
     <body> 
         <div>Enter an artist!<input id="artist_input"></div>
         <div>Enter a song!<input id="song_input"></div>
-        <button id = "display_song_summary_button">Display</button>
+        <button id = "display_song_summary_button" onclick="display_song()">Display</button>
         <div id = "song_html">
             {{ song_html }}
         </div>
@@ -19,25 +19,34 @@
 {% endblock %}
 
 {% block imported_js %}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 {% endblock %}
     
 {% block js %}
-
-    $.ajax({
-        type: "POST",
-        url: "/home/",
-        data: {
-            "artist": $("#artist_input"),
-            "song": $("#song_input"),
-            "csrfmiddlewaretoken": "{{ csrf_token }}",
-        },
-        success: function(data){
-            console.log("SUCCESS!!!");
-        },
-        failure: function(data){
-            console.log("FAILURE!!!");
-        },
-    });
+    <script>
+        function display_song(){
+            var artist = $("#artist_input").val();
+            var song = $("#song_input").val();
+            if (artist != "" && song != ""){
+                $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {
+                        "artist": artist,
+                        "song": song,
+                        "csrfmiddlewaretoken": "{{ csrf_token }}",
+                    },
+                    success: function(data){
+                        console.log("SUCCESS!!!");
+                    },
+                    failure: function(data){
+                        console.log("FAILURE!!!");
+                    },
+                });
+            } else{
+                console.log("enter something ho");
+            }
+        }
+    </script>
 
 {% endblock %}
