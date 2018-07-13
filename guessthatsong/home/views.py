@@ -30,14 +30,8 @@ class HomeView(TemplateView):
         Load context data for home page
         """
         context = super().get_context_data(**kwargs)
-        if self.request.POST:
-            song = self.request.POST["song"]
-            artist = self.request.POST["artist"]
-            song_html = get_song_html(artist, song)
-            context = {"song_html": song_html}
         return context
 
-    """
     def post(self, request):
         """
         Define post function of web page
@@ -46,5 +40,4 @@ class HomeView(TemplateView):
         artist = request.POST["artist"]
         song_html = get_song_html(artist, song)
         context = {"song_html": song_html}
-        return render(request, "home.html", context)
-    """
+        return render(request, "song_display.html", context)

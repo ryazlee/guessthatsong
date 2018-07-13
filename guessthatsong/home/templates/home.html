@@ -1,5 +1,4 @@
-{% block content %}
-    <html>
+<html>
     <head>
         <title>#guessthatsongday!</title>
         <meta charset='utf-8'>
@@ -10,13 +9,15 @@
         <div>Enter an artist!<input id="artist_input"></div>
         <div>Enter a song!<input id="song_input"></div>
         <button id = "display_song_summary_button" onclick="display_song()">Display</button>
+
+        {% block content %}
         <div id = "song_html">
-            {{ song_html }}
+            {% include 'song_display.html' %}
         </div>
+        {% endblock %}
 
     </body>
 </html>
-{% endblock %}
 
 {% block imported_js %}
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
@@ -38,6 +39,7 @@
                     },
                     success: function(data){
                         console.log("SUCCESS!!!");
+                        $("#song_html").html(data);
                     },
                     failure: function(data){
                         console.log("FAILURE!!!");
@@ -47,7 +49,6 @@
                 console.log("enter something ho");
             }
         }
-        alert("{{song_html}}");
     </script>
 
 {% endblock %}
