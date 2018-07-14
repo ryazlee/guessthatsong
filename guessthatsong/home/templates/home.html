@@ -3,12 +3,16 @@
         <title>#guessthatsongday!</title>
         <meta charset='utf-8'>
         <script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     </head>
     <body> 
-        <div>Enter an artist!<input id="artist_input"></div>
-        <div>Enter a song!<input id="song_input"></div>
-        <button id = "display_song_summary_button" onclick="display_song()">Display</button>
+        <h1>Emoji Songs</h1>
+        <div id = "user_input">
+            <div>Enter an artist: <input id="artist_input"></div>
+            <div>Enter a song: <input id="song_input"></div>
+            <button id = "display_song_summary_button" onclick="display_song()">Display</button>
+        </div>
 
         {% block content %}
         <div id = "song_html">
@@ -18,6 +22,28 @@
 
     </body>
 </html>
+
+{% block css %}
+    <style>
+        html{
+            font-family: 'Nunito', sans-serif;
+        }
+       
+        #user_input{
+            text-align: center;
+        }
+
+        button{
+            margin: 10px auto;
+        }
+
+        #song_html{
+            text-align: center;
+            padding: 2%;
+            margin: auto;
+        }
+    </style>
+{% endblock %}
 
 {% block imported_js %}
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
