@@ -34,8 +34,13 @@ def create_replacement_dict(data):
     return replacement_dict
 
 def replace_words_with_mappings(song_html, mappings):
+    print("Cleaning html")
+    song_html = song_html.replace("<br>", " <br> ")
+    song_html = song_html.replace("\n", "")
+    song_html = song_html.replace(".", "")
     words = song_html.split(" ")
     replaced_song = ""
+    print("Replacing words")
     for word in words:
         if word.lower() in mappings: replaced_song += " " + mappings[word.lower()]
         else:
@@ -48,6 +53,7 @@ class HomeView(TemplateView):
     emoji_mappings_wrapper = open(emoji_mappings_url, "r")
     emoji_mappings_raw = emoji_mappings_wrapper.read()
     emoji_mappings = create_replacement_dict(emoji_mappings_raw)
+
     def get_context_data(self, **kwargs):
         """
         Load context data for home page
@@ -64,4 +70,5 @@ class HomeView(TemplateView):
         song_html_raw = get_song_html(artist, song).decode('UTF-8')
         song_html = replace_words_with_mappings(song_html_raw, self.emoji_mappings)
         context = {"song_html": song_html}
+        print("Context sent to song_display.html")
         return render(request, "song_display.html", context)
