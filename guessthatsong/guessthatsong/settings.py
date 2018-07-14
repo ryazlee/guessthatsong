@@ -55,7 +55,7 @@ ROOT_URLCONF = 'guessthatsong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['home/templates'],
+        'DIRS': ['home/templates', 'home/files'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
