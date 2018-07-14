@@ -39,5 +39,5 @@ class HomeView(TemplateView):
         song = request.POST["song"]
         artist = request.POST["artist"]
         song_html = get_song_html(artist, song)
-        context = {"song_html": song_html}
+        context = {"song_html": song_html.decode('UTF-8')}
         return render(request, "song_display.html", context)
