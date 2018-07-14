@@ -42,7 +42,10 @@ def replace_words_with_mappings(song_html, mappings):
     replaced_song = ""
     print("Replacing words")
     for word in words:
+        word_without_last = word.lower()[0:-1]
         if word.lower() in mappings: replaced_song += " " + mappings[word.lower()]
+        elif word_without_last in mappings and word_without_last is not 'i': 
+            replaced_song += " " + mappings[word_without_last] + word.replace(word_without_last, "")
         else:
             replaced_song += " " + word
     return replaced_song
