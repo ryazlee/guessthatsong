@@ -14,6 +14,8 @@ def get_song_html(artist, song):
     """
     Gets the html from azlyrics website containing the lyrics for song
     """
+    artist = artist.replace(" ", "")
+    song = song.replace(" ", "")
     song_url = song_url_base.replace("#FILLIN#", artist + "/" + song)
     print("Getting html from", song_url)
     response = urllib.request.urlopen(song_url)
